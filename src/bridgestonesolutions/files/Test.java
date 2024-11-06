@@ -1,13 +1,11 @@
-package bridgesol;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.*;
-import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
-class Data {
+private class Data {
     private String ICCID,
             IMSI,
             SENT_DATETIME;
@@ -39,7 +37,7 @@ class Data {
 }
 
 
-class Main {
+class OnlineTest {
 
     public static List<Data> addValuesToList(String[] values) {
         List<Data> csvData = new ArrayList<>();
@@ -70,6 +68,7 @@ class Main {
 
         }
 
+        return 0;
     }
 
 
@@ -100,11 +99,11 @@ class Main {
         String[] arr = CSV.split("\n");
 
         //Coverting values to POJO List
-        List<Data> values = Main.addValuesToList(arr);
+        List<Data> values = OnlineTest.addValuesToList(arr);
 
         //Collections.sort(values);
 
-        for(Data data : values) {
+        for (Data data : values) {
             ICCIDValidityChecker.isValidICCID(data.ICCID);
         }
     }
@@ -982,4 +981,7 @@ private static String CSV = "ICCID,IMSI,SENT_DATETIME\n"
         + "89314404000106548085,204043728719991,20140707162647\n"
         + "89314404000106548093,204043728719992,20140707162647\n"
         + "89314404000106548101,204043728719993,20140707162647\n";
+
+public void main() {
 }
+

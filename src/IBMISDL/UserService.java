@@ -1,12 +1,14 @@
-package testV;
+package IBMISDL;
 
 public class UserService {
 
 
-    public String addUser (String s) throws InvalidUserNameException{
+    public String addUser (String s)
+            //throws InvalidUserNameException
+    {
 
 
-        if(){
+        if(true){
 
             //throw exception
         }
@@ -23,7 +25,7 @@ class UserServiceTest{
 
     public void addUserWhenInvalid(){
 
-        when(userService.addUser("string")). (new InvalidUserNameException());
+       // when(userService.addUser("string")). (new InvalidUserNameException());
 
 
     }
